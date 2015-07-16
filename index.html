@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Building a Visual Video Editor for the Web</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+    <style>
+.reveal section img {
+  border: none;
+  box-shadow: none;
+}
+    </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Building a Visual Video Editor for the Web</h1>
+					<h3>Using popcorn.js to change how we use video.</h3>
+					<p>
+						<small>Created by <a href="http://nolski.rocks">Mike Nolan</a> / <a href="http://twitter.com/TheRogueNolski">@TheRogueNolski</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h1>Hello!</h1>
+          <aside class="notes">Hi, I'm Mike</aside>
+				</section>
+
+				<section>
+          <img src="/img/mozilla.png" alt="" style="boarder: none"/>
+          <aside class="notes"> I'm a software developer at mozilla</aside>
+				</section>
+
+				<section>
+          <img src="/img/airmo.png" alt=""/>
+        <aside class="notes">I work on a product called Air Mozilla which is a video streaming site akin to youtube 
+        but most recently I have been working on creating an in browser solution for editing uploaded videos </aside>
+				</section>
+
+        <section>
+          <img src="/img/popcorn.png" alt=""/>
+          <aside class="notes">Most of my work has stemmed from Popcorn Maker, a project built by the Mozilla Foundation Webmaker team.
+          During my time on this project I've created a fork which contains strictly the front end components for the
+          editor and allows users to hook up javascript events for loading and saving content through the editor. </aside>
+        </section>
+
+				<section>
+          <img src="/img/wmf.png" style="height: 600px" alt=""/>
+          <aside class="notes">I was then approached by Ben Moskowitz from Mozilla Foundation and introduced to SJ Klein at WMF
+            They introduced me to a lot of the great video initiatives going on within the wikimedia communities </aside>
+				</section>
+
+				<section>
+          <img src="/img/wikimania.png" style="height: 600px" alt=""/>
+          <aside class="notes"> So now I'm here, at Wikimania, with all of you, doing this talk. Pitching this editor and video
+          content and how it can change how we think of Open Knowledge.
+           So before I go on about the tech I have built I want to try and show how important video has been in the
+           evolution of the web and how we consume information.  </aside>
+				</section>
+
+        <section>
+          <h3>200 petabytes of <a href="https://vimeo.com/blog/post/official-year-end-self-appraisal-and-profound-intr">video played on Vimeo</a> in 2012</h3>
+          <aside class="notes"> as I'm sure you've all heard video on the web has been increasing an incredible amount. In 2012 Vimeo
+            reported that users played over 200 petabytes of video.</aside>
+        </section>
+
+        <section>
+          <img src="/img/cat.jpg" alt="" style="boarder: none"/>
+          <aside class="notes"> Videos on the internet are no longer simply cat videos and people being kicked in the testicles either.</aside>
+        </section>
+
+        <section>
+          <img src="/img/youtube_news.png" alt="" style="boarder: none"/>
+          <aside class="notes"> The web is full of great things. Things that help you learn and share knowledge. 7000 hours of video are
+          uploaded to youtube daily. Videos uploaded that were tagged Obama or Romney were viewed 2.7 BILLION times during
+          the 2012 election cycle. That's 3x the views of Gangnam style </aside>
+        </section>
+
+        <section>
+            <img src="/img/edu.png" alt="" style="boarder: none"/>
+          <aside class="notes">As a student I probably spend the same amount of time consuming free educational video content as I do
+            listening to a professor re-iterate the same things for tens of thousands of dollars per year. </aside>
+        </section>
+
+        <section>
+          <img src="/img/editor.png" alt="" style="boarder: none"/>
+          <aside class="notes">So that's my case for why video is important for wikimedia and such. So I've been working on this video
+          video editor to allow users of air mozilla to modify and remix uploaded content. What does it look like? well,
+          it looks something like this. The front end of the editor is this modular javascript library that you can
+          just bower install and then we are implementing a back end message queue powered by ffmpeg that converts the
+          editors output (popcorn.js json) into a flat rendered video file.</aside>
+        </section>
+
+        <section>
+          <h3>The Editor</h3>
+          <a href="https://github.com/nolski/popcorn-editor">https://github.com/nolski/popcorn-editor</a>
+          <h3>The Transcoder</h3>
+          <a href="https://github.com/nolski/popcoder">https://github.com/nolski/popcoder</a>
+        <aside class="notes">So of course both of these projects are open source and I am currently hosting the upstream on github under
+          my name. It may however later change to be under mozilla.</aside>
+        </section>
+
+        <section>
+          <h1>DEMO TIME</h1>
+        </section>
+
+        <section>
+          <h2>TODO</h2>
+          <ul>
+            <li>create a modular video editor easily embeddable through a simple javascript API. (and fix all the <a href="https:github.com/nolski/popcorn-editor/issues/">outstanding bugs</a>)</li>
+            <li>Create a method of transcoding popcorn videos into flat video files for portability</li>
+            <li>Make these tools known to everyone who would like to use them and assist in integration.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Questions?</h1>
+        </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
